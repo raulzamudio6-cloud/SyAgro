@@ -1,0 +1,24 @@
+{
+  "name": "syagro",
+  "version": "1.0.0",
+  "description": "SaaS Agro es un sistema integral de gestión agrícola diseñado para optimizar las operaciones de la explotación y mejorar la productividad. Esta plataforma ofrece un conjunto de herramientas y funciones para ayudar a los agricultores a controlar la salud de los cultivos, gestionar los recursos de forma eficiente y tomar decisiones informadas basadas en datos en tiempo real.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "RAUL F ZAMUDIO GALINDO",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "morgan": "^1.10.1",
+    "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
