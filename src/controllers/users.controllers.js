@@ -1,4 +1,5 @@
 const { json } = require('express');
+const bcrypt = require('bcrypt');
 const pool = require('../db');
 
 const getAllUsers = async (req, res, next) => {
