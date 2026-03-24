@@ -62,13 +62,12 @@ const updateCompany = async (req, res, next) => {
 
     try {
         const results = await pool.query('SELECT * FROM update_company($1, $2, $3, $4, $5, $6, $7, $8)',
-            [name, legal_name, city, rfc, phone, email, suscription_plan, id]);
+            [id, name, legal_name, city, rfc, phone, email, suscription_plan]);
         if (results.rowCount === 0) {
             res.status(404).json({ error: 'Compañía no encontrada' });
         } else {
-            res.json({ message: 'Compañía actualizada correctamente' });
+            res.json(results.rows[0]);
         }
-        return res.json(results.rows[0]);
 
     } catch (error) {
         next(error);
