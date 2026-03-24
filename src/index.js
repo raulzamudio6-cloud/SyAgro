@@ -7,7 +7,9 @@ const port = db.port;
 const companiesRoutes = require('./routes/companies.routes');
 const userRoutes = require('./routes/users.routes');
 
-app.use(cors());
+app.use(cors({origin: [`http://localhost:${port}`, 'https://syagro-client.vercel.app']}));
+
+
 app.use(morgan('dev'));
 
 app.use(express.json());
