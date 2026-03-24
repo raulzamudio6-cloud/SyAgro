@@ -12,7 +12,7 @@ const userRoutes = require('./routes/users.routes');
 app.use(cors({
     origin: [
         'https://sy-agro-client.vercel.app',  // Tu frontend en Vercel (PRODUCCIÓN)
-        'http://localhost:${3000}}',               // Tu frontend local (DESARROLLO)
+        'http://localhost:${port}',               // Tu frontend local (DESARROLLO)
         'https://sy-agro-client-git-master-*.vercel.app' // Dominios de preview de Vercel (opcional)
     ],
     credentials: true,
