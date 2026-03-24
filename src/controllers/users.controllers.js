@@ -1,6 +1,3 @@
-import bcrypt from 'bcryptjs'; // o 'bcrypt'
-
-
 const { json } = require('express');
 const pool = require('../db');
 
