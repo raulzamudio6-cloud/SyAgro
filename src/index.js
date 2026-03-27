@@ -4,8 +4,11 @@ const cors = require('cors');
 const db = require('./config');
 const app = express();
 const port = db.port;
+
 const companiesRoutes = require('./routes/companies.routes');
 const userRoutes = require('./routes/users.routes');
+const modulesRoutes = require('./routes/modules.routes');
+const plansRoutes = require('./routes/plans.routes');
 
 
 // ✅ Configura CORS (PON ESTO ANTES DE TUS ROUTAS)
@@ -26,6 +29,8 @@ app.use(express.json());
 
 app.use(companiesRoutes);
 app.use(userRoutes);
+app.use('/modules', modulesRoutes);
+app.use('/plans', plansRoutes);
 app.use((err, req, res, next) => {
     return res.json({
         message: err.message
