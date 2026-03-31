@@ -15,8 +15,8 @@ const plansRoutes = require('./routes/plans.routes');
 app.use(cors({
     origin: [
         'https://sy-agro-client.vercel.app',  // Tu frontend en Vercel (PRODUCCIÓN)
-        'http://localhost:${port}',               // Tu frontend local (DESARROLLO)
-        'https://sy-agro-client-git-master-*.vercel.app' // Dominios de preview de Vercel (opcional)
+        'http://localhost:3000',              // Tu frontend local (Confirmado en puerto 3000)
+        /^https:\/\/sy-agro-client-git-master-.*\.vercel\.app$/ // RegExp para permitir ramas de Vercel
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], // ✅ Incluye OPTIONS
@@ -39,5 +39,3 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });
-
-

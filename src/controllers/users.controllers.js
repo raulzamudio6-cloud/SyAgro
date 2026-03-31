@@ -4,7 +4,9 @@ const pool = require('../db');
 
 const getAllUsers = async (req, res, next) => {
     try {
+        console.log
         const allUsers = await pool.query('SELECT * FROM  users');
+        console.log(allUsers);
         res.json(allUsers.rows);
     } catch (error) {
         next(error);

@@ -3,9 +3,15 @@ const pool = require('../db');
 
 const getAllCompanies = async (req, res, next) => {
     try {
+        console.log('Fetching all companies...');
+        console.log(pool);
         const allCompanies = await pool.query('SELECT * FROM  get_all_companies()');
+        console.log('Companies fetched successfully');
         res.json(allCompanies.rows);
+        console.log(allCompanies.rows);
+        
     } catch (error) {
+        console.error('Error fetching companies:', error);
         next(error);
     }
 };
